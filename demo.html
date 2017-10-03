@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Marquee demo</title>
+    <meta charset="utf-8" />
+</head>
+
+<script>
+    // run this before babel-standalone to make sure anything exported from a module
+    // is made available in global scope...
+    window.exports = window;
+    function require (module) {
+        if (module === "react")  return React;
+        if (module === "react-dom")  return ReactDOM;
+    }
+</script>
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://unpkg.com/react@15.5.4/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.min.js"></script>
+<script type="text/jsx" data-presets="es2015, react" src="src/index.jsx"></script>
+<script type="text/jsx" data-presets="es2015, react">
+    class App extends React.Component
+    {
+        render () {
+            return (
+                <div>
+                    <Marquee>A marquee with default options.  Dolor sit amet consectetuer adipiscing elit.</Marquee>
+                </div>
+            );
+        }
+    }
+    function startApp ()
+    {
+        ReactDOM.render(<App/>, document.getElementById("app"));
+    }
+</script>
+
+<style type="text/css">
+.Marquee { overflow-x: hidden; }
+.MarqueeContent { display: inline-block; }
+</style>
+<body onload="window.setTimeout(function () { startApp() },1000)">
+<h1>Marquee demo</h1>
+<div id="app"></div>
+</body>
+</html>
