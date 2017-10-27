@@ -9,6 +9,14 @@
     "demo": "static-server -p 8800 -i demo.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jh3141/react-smooth-marquee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jh3141/react-smooth-marquee/issues"
+  },
+  "homepage": "https://github.com/jh3141/react-smooth-marquee#readme",
   "author": "Julian Hall <jh314159@googlemail.com>",
   "license": "MIT",
   "devDependencies": {
