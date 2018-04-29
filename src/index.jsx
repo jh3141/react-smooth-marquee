@@ -64,11 +64,30 @@ export default class Marquee extends React.Component
     {
         return this.props.velocity ? this.props.velocity : 0.12;
     }
+
+    getStyle ()
+    {
+        return this.props.style ? this.props.style : null;
+    }
+
+    getContentStyle ()
+    {
+        const transform = { transform: this.calculateTransform() };
+        const { contentStyle } = this.props;
+
+        if (contentStyle)
+            return Object.assign({}, transform, contentStyle)
+        else
+            return transform
+    }
+
     render ()
     {
         return (
-            <div className="Marquee" ref={this.setOuterRef}>
-                <div className="MarqueeContent" ref={this.setContentRef} style={{transform: this.calculateTransform()}}>{this.props.children}</div>
+            <div className="Marquee" ref={this.setOuterRef} style={this.getStyle()}>
+                <div className="MarqueeContent" contentStyle={this.getContentStyle()} ref={this.setContentRef} style={this.getContentStyle()}>
+                    {this.props.children}
+                </div>
             </div>
         );
     }

@@ -28,17 +28,23 @@ The component is pretty simple at present (although I expect it will accumulate 
 <Marquee>Content goes here </Marquee>
 ```
 
-There is one optional property, `velocity`, which sets the movement velocity (in CSS pixels per millisecond).  It defaults to 0.12, which seems a reasonably sensible value for most applications.
+## Properties
 
-The component expects two CSS classes to be defined, but does not include any definitions itself (in order to allow for highest flexibility).  These are:
+### velocity
 
-## `.Marquee`
+Sets the movement velocity (in CSS pixels per millisecond).  It defaults to 0.12, which seems a reasonably sensible value for most applications.
 
-This sets styles on the container, i.e. the outer element whose position remains static. It should usually have `display: block` 
+### style
+
+This sets styles on the container, i.e. the outer element whose position remains static. It should usually have `display: block`
 (although as a `<div>` element is used this is the default) and for correct function must have `overflow-x: hidden`.
 
-## `.MarqueeContent`
+You can also style the container by targeting the class `.Marquee` instead of using this property.
 
-This sets styles on the child that is moved within the container.  In order to allow correct calculation of when the element is 
+### contentStyle
+
+This sets styles on the child that is moved within the container.  In order to allow correct calculation of when the element is
 moved from the left hand edge of the display back to the right, it should usually be set up either with `display: block` and an
 explicit width, or with `display: inline-block` so that width can be calculated from its contents.
+
+You can also style the content by targeting the class `.MarqueeContent` instead of using this property.
