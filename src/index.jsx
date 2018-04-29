@@ -85,7 +85,7 @@ export default class Marquee extends React.Component
     {
         return (
             <div className="Marquee" ref={this.setOuterRef} style={this.getStyle()}>
-                <div className="MarqueeContent" contentStyle={this.getContentStyle()} ref={this.setContentRef} style={this.getContentStyle()}>
+                <div className="MarqueeContent" ref={this.setContentRef} style={this.getContentStyle()}>
                     {this.props.children}
                 </div>
             </div>
