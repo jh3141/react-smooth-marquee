@@ -25,6 +25,12 @@
             return (
                 <div>
                     <Marquee>A marquee with default options.  Dolor sit amet consectetuer adipiscing elit.</Marquee>
+                    <Marquee
+                        style={{ width: "256px", padding: 5, backgroundColor: "black" }}
+                        contentStyle={{ color: "aqua", whiteSpace: "nowrap" }}
+                    >
+                        A marquee with style and contentStyle properties set.  Dolor sit amet consectetuer adipiscing elit.
+                    </Marquee>
                 </div>
             );
         }
@@ -36,7 +42,7 @@
 </script>
 
 <style type="text/css">
-.Marquee { overflow-x: hidden; }
+.Marquee { overflow-x: hidden; margin-bottom: 16px; }
 .MarqueeContent { display: inline-block; }
 </style>
 <body onload="window.setTimeout(function () { startApp() },1000)">
